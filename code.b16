@@ -1,0 +1,22 @@
+//Countdown timer v4
+
+dat g1; 3000 //total milliseconds
+dat g2; 3000 //initial time value
+dat g3; 1000
+
+#loop:
+	mov tim, tmp
+	
+	sub g1, tim
+	mov acc, g1
+	clr tim
+	
+	cmp g1, g2
+	jal #end
+	
+	div g1, g3
+	add acc, one
+	deb acc
+	jmp #loop
+
+#end: hlt
